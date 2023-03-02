@@ -1,0 +1,118 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        ///////////////////////////// DATASET GENERATION
+        {
+            "name": "0. mainDataset.py",
+            "type": "python",
+            "request": "launch",
+            "program": "1. dataset/mainDataset.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "0. addColumnsAirframes.py",
+            "type": "python",
+            "request": "launch",
+            "program": "addColumnsAirframes.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        ///////////////////////////// SEGMENTATION
+        {
+            "name": "1. mainSegmentation",
+            "type": "python",
+            "request": "launch",
+            "program": "2. data preparation/mainSegmentation.py",
+            "args": [
+                "--useFlags",      "Yes",
+                "--Debug",         "No",
+                "--Resampling",    "No",
+                "--Segmentation",  "SQUISHE",
+                "--CRate",         "50", 
+                "--MinPoints",     "10", 
+                "--Parallel",      "Yes",
+                "--Threads",       "4", 
+                "--partialInputs", "Yes"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        ///////////////////////////// FEATURES
+        {
+            "name": "2.1. mainFeaturesExtraction",
+            "type": "python",
+            "request": "launch",
+            "program": "2. data preparation/mainFeaturesExtraction.py",
+            "args": [
+                "--useFlags",      "Yes",
+                "--Debug",         "No",
+                "--Resampling",    "No",
+                "--Segmentation",  "SQUISHE",
+                "--CRate",         "50", 
+                "--MinPoints",     "10", 
+                "--Parallel",      "Yes",
+                "--Threads",       "16", 
+                "--partialInputs", "Yes"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": false
+        },
+        {
+            "name": "2.2. mergeFeatures",
+            "type": "python",
+            "request": "launch",
+            "program": "2. data preparation/scriptJoinMultipleFeaturesFiles.py",
+            "args": [
+                "--useFlags",      "Yes",
+                "--Debug",         "No",
+                "--Resampling",    "No",
+                "--Segmentation",  "SQUISHE",
+                "--CRate",         "50", 
+                "--MinPoints",     "10", 
+                "--Parallel",      "Yes",
+                "--Threads",       "16", 
+                "--partialInputs", "Yes"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": false
+        },
+        {
+            "name": "2.3. createExperiments",
+            "type": "python",
+            "request": "launch",
+            "program": "2. data preparation/scriptCreateExperiments.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": false
+        },
+        ///////////////////////////// CLASSIFICATION
+        {
+            "name": "3. launchClassifier",
+            "type": "python",
+            "request": "launch",
+            "program": "3. classification/mainCLassification.py",
+            "args": [
+                "--useFlags",  "Yes",
+                "--algorithm", "DT",
+                "--loadModel", "No"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        }
+        
+    ]
+}

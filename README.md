@@ -1,0 +1,1 @@
+Esta carpeta almacena los scripts con algoritmos de clasificación, extracción y análisis de resultados, y el main para ejecutarlos.

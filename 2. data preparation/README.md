@@ -1,0 +1,1 @@
+Esta carpeta almacena los scripts con algoritmos de data preparation: segmentation y features extraction, y el main para ejecutarlos.

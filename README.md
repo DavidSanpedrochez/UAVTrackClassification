@@ -1,1 +1,1 @@
-Esta carpeta almacena los scripts con algoritmos de clasificación, extracción y análisis de resultados, y el main para ejecutarlos.
+This repository contains the source code for the preprint: UAV airframe classification based on trajectory data in UTM collaborative environments, made by David Sánchez Pedroche, Daniel Amigo, Jesús García and José Manuel Molina, from University Carlos III of Madrid.

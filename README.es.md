@@ -14,9 +14,9 @@ El resto de datasets se obtienen con la ejecución de estos datos originales y e
 
 
 - `UAVTrackClassification`: Directorio con todo el código fuente.
-    - [![](https://img.shields.io/badge/README-1. dataset-red)](./README.es.md): Componentes para la generación del dataset.
-    - [![](https://img.shields.io/badge/README-2. data preparation-red)](./README.es.md): Componentes para la preparación de las entradas de los algoritmos de clasificacion.
-    - [![](https://img.shields.io/badge/README-3. dataset-red)](./README.es.md): Componentes para la aplicación de algoritmos de clasificacion.
+    - [![](https://img.shields.io/badge/README-1.dataset-red)](./README.es.md): Componentes para la generación del dataset.
+    - [![](https://img.shields.io/badge/README-2.data preparation-red)](./README.es.md): Componentes para la preparación de las entradas de los algoritmos de clasificacion.
+    - [![](https://img.shields.io/badge/README-3.dataset-red)](./README.es.md): Componentes para la aplicación de algoritmos de clasificacion.
     
 #### Dependencias y versiones utilizadas:
 El código ha sido probado en la versión MATLAB R2020 Update 1, 64-bit (win64). Requiere el uso de la Toolbox Parallel Computing. Se puede desactivar si se cambian los bucles "parfor" por "for".

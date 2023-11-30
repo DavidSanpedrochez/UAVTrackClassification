@@ -39,14 +39,14 @@ from sklearn.neural_network import MLPClassifier
 #############################################################
 # *****************************************************************************************
 # ** Decision tree Algorithm
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT:
-# ******* OUTPUT: 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT]
+# *******  [OUTPUT] 
 # *****************************************************************************************
 
 # INTENTO DE PINTAR MATRIZ DE CONFUSION BUENA (CON PORCENTAJES)
@@ -57,7 +57,7 @@ def decisionTree(maxDepth,ExperimentDir,X_train, y_train, X_test, y_test, output
       y_pred = dt.predict(X_test)
       y_pred_proba = dt.predict_proba(X_test)#[:, 1]
 
-      #ANALISIS DE RESULTADOS
+      
       confmat = metrics.confusion_matrix(y_test, y_pred)
       acc = metrics.accuracy_score(y_test, y_pred)
       precision = metrics.precision_score(y_test, y_pred, average='micro')
@@ -129,20 +129,20 @@ def decisionTree(maxDepth,ExperimentDir,X_train, y_train, X_test, y_test, output
             dump(dt, join(DIR,FILE))
       return confmat,acc,precision,recall,f1
 
+
+
 # TO COMPLETE
-
-
-      
+    
 # *****************************************************************************************
 # ** Random forest Algorithm
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT:
-# ******* OUTPUT: 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT]
+# *******  [OUTPUT] 
 # *****************************************************************************************
 # create a new model
 def randomForest(maxDepth,nEstimators,ExperimentDir,X_train, y_train, X_test, y_test, outputPath,imagesDir,modelsDir,resultsDir, printResults, showModel, saveResults, saveModel):
@@ -150,7 +150,7 @@ def randomForest(maxDepth,nEstimators,ExperimentDir,X_train, y_train, X_test, y_
       rf.fit(X_train, y_train)
       y_pred = rf.predict(X_test)
       y_pred_proba = rf.predict_proba(X_test)#[:, 1]
-      #ANALISIS DE RESULTADOS
+      
       confmat = metrics.confusion_matrix(y_test, y_pred)
       acc = metrics.accuracy_score(y_test, y_pred)
       precision = metrics.precision_score(y_test, y_pred, average='micro')
@@ -236,14 +236,14 @@ def randomForest(maxDepth,nEstimators,ExperimentDir,X_train, y_train, X_test, y_
 
 # *****************************************************************************************
 # ** SVM Algorithm
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT:
-# ******* OUTPUT: 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT]
+# *******  [OUTPUT] 
 # *****************************************************************************************
 def svm(maxIter,ker,ExperimentDir,X_train, y_train, X_test, y_test, outputPath,imagesDir,modelsDir,resultsDir, printResults, saveResults, saveModel):
       svm = SVC(random_state=0,max_iter=maxIter,kernel=ker)
@@ -251,7 +251,7 @@ def svm(maxIter,ker,ExperimentDir,X_train, y_train, X_test, y_test, outputPath,i
       #svm=SVC(kernel='linear', C=1).fit(X_train, y_train)
       y_pred = svm.predict(X_test)
       
-      #ANALISIS DE RESULTADOS
+      
       confmat = metrics.confusion_matrix(y_test, y_pred)
       acc = metrics.accuracy_score(y_test, y_pred)
       precision = metrics.precision_score(y_test, y_pred, average='micro')
@@ -303,21 +303,21 @@ def svm(maxIter,ker,ExperimentDir,X_train, y_train, X_test, y_test, outputPath,i
 
 # *****************************************************************************************
 # ** KNN Algorithm
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT:
-# ******* OUTPUT: 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT]
+# *******  [OUTPUT] 
 # *****************************************************************************************
 def knn(nNeighbors,ExperimentDir,X_train, y_train, X_test, y_test, outputPath,imagesDir,modelsDir,resultsDir, printResults, showModel, saveResults, saveModel):
       knn = KNeighborsClassifier(n_neighbors=nNeighbors)
       knn.fit(X_train, y_train)
       y_pred = knn.predict(X_test)
 
-      #ANALISIS DE RESULTADOS
+      
       confmat = metrics.confusion_matrix(y_test, y_pred)
       acc = metrics.accuracy_score(y_test, y_pred)
       precision = metrics.precision_score(y_test, y_pred, average='micro')
@@ -369,14 +369,14 @@ def knn(nNeighbors,ExperimentDir,X_train, y_train, X_test, y_test, outputPath,im
 
 # *****************************************************************************************
 # ** MLP Algorithm
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT:
-# ******* OUTPUT: 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT]
+# *******  [OUTPUT] 
 # *****************************************************************************************
 def mlp(hiddenLayers,activationFunc,maxIter,ExperimentDir,X_train, y_train, X_test, y_test, outputPath,imagesDir,modelsDir,resultsDir, printResults, saveResults, saveModel):
       mlp = MLPClassifier(hidden_layer_sizes=hiddenLayers,activation=activationFunc,max_iter=maxIter)
@@ -384,7 +384,7 @@ def mlp(hiddenLayers,activationFunc,maxIter,ExperimentDir,X_train, y_train, X_te
       mlp.fit(X_train, y_train)
       y_pred = mlp.predict(X_test)
       y_pred_proba = mlp.predict_proba(X_test)#[:, 1]
-      #ANALISIS DE RESULTADOS
+      
       confmat = metrics.confusion_matrix(y_test, y_pred)
       acc = metrics.accuracy_score(y_test, y_pred)
       precision = metrics.precision_score(y_test, y_pred, average='micro')
@@ -439,12 +439,12 @@ def mlp(hiddenLayers,activationFunc,maxIter,ExperimentDir,X_train, y_train, X_te
 
 # *****************************************************************************************
 # ** Decision tree Algorithm - load an existing model
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT: 
-# *******  INPUT:
-# ******* OUTPUT: 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT] 
+# *******  [INPUT]
+# *******  [OUTPUT] 
 # *****************************************************************************************

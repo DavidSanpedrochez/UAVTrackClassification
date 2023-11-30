@@ -60,8 +60,8 @@ segmentationDir       = "SegmentationOutput"      # PATH to the sub-folder with 
 #############################################################
 # *****************************************************************************************
 # ** Load data stored in a csv file
-# *******  INPUT: CSV file path
-# ******* OUTPUT: Dataframe with the data
+# *******  [INPUT] CSV file path
+# *******  [OUTPUT] Dataframe with the data
 # *****************************************************************************************
 def loadDataCSV(CSVList):
     csv = pd.read_csv(CSVList,sep=',')
@@ -99,13 +99,13 @@ def extractSegmentSummary(track=None, segmentStart=None, segmentEnd=None):
 
 # *****************************************************************************************
 # Segment the tracks
-# *******  INPUT: tracksDir:        path to the folder with the tracks
-# *******  INPUT: outputPath:       path to the folder to store the segments and its summary
-# *******  INPUT: flag              to indicate if segmentation can be applied
-# *******  INPUT: thread_id:        thread  number
-# *******  INPUT: tracks:           list of tracks to be processed 
-# *******  INPUT: models:           drone model for each track
-# ******* OUTPUT: segmentAlgorithm: CSV file with the dataframe including the segments extracted from the tracks
+# *******  [INPUT] tracksDir:        path to the folder with the tracks
+# *******  [INPUT] outputPath:       path to the folder to store the segments and its summary
+# *******  [INPUT] flag              to indicate if segmentation can be applied
+# *******  [INPUT] thread_id:        thread  number
+# *******  [INPUT] tracks:           list of tracks to be processed 
+# *******  [INPUT] models:           drone model for each track
+# *******  [OUTPUT] segmentAlgorithm: CSV file with the dataframe including the segments extracted from the tracks
 # *****************************************************************************************
 def segmentationProcess(tracksDir, outputPath, thread_id, tracks, models, segmentAlgorithm="SQUISHE", debug=False):
     # Remove output folder if exists and create it again

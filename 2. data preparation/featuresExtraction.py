@@ -13,13 +13,21 @@ import multiprocessing                                      # for parallelizatio
 import pathlib
 ##### Algorithms to import #####
 import segmentationAlgorithms as segmentation               # segmentationAlgorithms.py - To segment the data
-
+#############################################################
+#                        FLAGS                              #
+#############################################################
+#############################################################
+#                        PATHS                              #
+#############################################################
+#############################################################
+#                     FUNCTIONS                             #
+#############################################################
 # *****************************************************************************************
 # ** Calculate the increments of the track
-# *******  INPUT: DATAFRAME with the track
-# *******  INPUT: start index of the segment
-# *******  INPUT: end index of the segment
-# ******* OUTPUT: DATAFRAME with the max, min and average increments
+# *******  [INPUT] DATAFRAME with the track
+# *******  [INPUT] start index of the segment
+# *******  [INPUT] end index of the segment
+# *******  [OUTPUT] DATAFRAME with the max, min and average increments
 # *****************************************************************************************
 def calculateIncrements(df, start, end, thread_id, trackID, debug=False):
     # 0: maximum value 
@@ -194,14 +202,14 @@ def calculateIncrements(df, start, end, thread_id, trackID, debug=False):
 #TRANSFORMS DATA TO INTERVALS
 #SAVES EVERYTHING IN A CSV (output.csv)
 
-# *******  INPUT: tracksDir:  path to the folder with the tracks
-# *******  INPUT: outputPath: path to the folder to store the procesed features
-# *******  INPUT: :           flag to indicate if segmentation can be applied
-# *******  INPUT: thread_id:  thread  number
-# *******  INPUT: tracks:     list of tracks to be processed 
-# *******  INPUT: models:     drone model for each track
-# *******  INPUT: segments:   list with the calculated segments
-# ******* OUTPUT: CSV file with the dataframe including the features extracted from the tracks
+# *******  [INPUT] tracksDir:  path to the folder with the tracks
+# *******  [INPUT] outputPath: path to the folder to store the procesed features
+# *******  [INPUT] :           flag to indicate if segmentation can be applied
+# *******  [INPUT] thread_id:  thread  number
+# *******  [INPUT] tracks:     list of tracks to be processed 
+# *******  [INPUT] models:     drone model for each track
+# *******  [INPUT] segments:   list with the calculated segments
+# *******  [OUTPUT] CSV file with the dataframe including the features extracted from the tracks
 # *****************************************************************************************
 # DETAILED LIST OF FEATURES
 # Based on previous work of ship classification:

@@ -22,17 +22,25 @@ import pathlib
 import segmentationAlgorithms as segmentation               # segmentationAlgorithms.py - To segment the data
 #from ..utils.loadCSV import loadDataCSV
 from featuresExtraction import featuresExtraction
-
+#############################################################
+#                        FLAGS                              #
+#############################################################
+#############################################################
+#                        PATHS                              #
+#############################################################
+#############################################################
+#                     FUNCTIONS                             #
+#############################################################
 
 # *****************************************************************************************
 # ** Return the balanced dataset
-# *******  INPUT: X
-# *******  INPUT: y
-# *******  INPUT: path
-# *******  INPUT: debug
-# *******  INPUT: saveInputData
-# ******* OUTPUT: X
-# ******* OUTPUT: y
+# *******  [INPUT] X
+# *******  [INPUT] y
+# *******  [INPUT] path
+# *******  [INPUT] debug
+# *******  [INPUT] saveInputData
+# *******  [OUTPUT] X
+# *******  [OUTPUT] y
 # *****************************************************************************************
 def dataBalancer(X,y,debug,explainBalancer,outputPath,seed):
     if debug:
@@ -66,13 +74,13 @@ def dataBalancer(X,y,debug,explainBalancer,outputPath,seed):
     return X,y
 # *****************************************************************************************
 # ** Return the balanced dataset, ensuring segments from same track
-# *******  INPUT: X
-# *******  INPUT: y
-# *******  INPUT: path
-# *******  INPUT: debug
-# *******  INPUT: saveInputData
-# ******* OUTPUT: X
-# ******* OUTPUT: y
+# *******  [INPUT] X
+# *******  [INPUT] y
+# *******  [INPUT] path
+# *******  [INPUT] debug
+# *******  [INPUT] saveInputData
+# *******  [OUTPUT] X
+# *******  [OUTPUT] y
 # *****************************************************************************************
 def trackBalancer(X,y,debug,explainBalancer,outputPath,seed):
     x_resampled = pd.DataFrame()

@@ -30,17 +30,7 @@ from featuresExtraction import featuresExtraction
 
 import pandas as pd
 
-# *****************************************************************************************
-# ** Load data stored in a csv file
-# *******  INPUT: CSV file path
-# ******* OUTPUT: Dataframe with the data
-# *****************************************************************************************
-def loadDataCSV(CSVList, debug=False):
-    csv = pd.read_csv(CSVList,sep=',')
-    if debug:
-        print("trajectory loaded")
-        csv
-    return csv
+
 
 #############################################################
 #                        FLAGS                              #
@@ -63,7 +53,17 @@ resamplingSegmentsDir= "ResamplingSegmentOutput"
 #############################################################
 #                     FUNCTIONS                             #
 #############################################################
-
+# *****************************************************************************************
+# ** Load data stored in a csv file
+# *******  [INPUT] CSV file path
+# *******  [OUTPUT] Dataframe with the data
+# *****************************************************************************************
+def loadDataCSV(CSVList, debug=False):
+    csv = pd.read_csv(CSVList,sep=',')
+    if debug:
+        print("trajectory loaded")
+        csv
+    return csv
 
 #############################################################
 #                        MAIN                               #

@@ -30,17 +30,7 @@ from featuresExtraction import featuresExtraction
 
 import pandas as pd
 
-# *****************************************************************************************
-# ** Load data stored in a csv file
-# *******  INPUT: CSV file path
-# ******* OUTPUT: Dataframe with the data
-# *****************************************************************************************
-def loadDataCSV(CSVList, debug=False):
-    csv = pd.read_csv(CSVList,sep=',')
-    if debug:
-        print("trajectory loaded")
-        csv
-    return csv
+
 
 #############################################################
 #                        FLAGS                              #
@@ -74,7 +64,17 @@ featuresDir           = "FeaturesOutput"          # PATH to the sub-folder with 
 #############################################################
 #                     FUNCTIONS                             #
 #############################################################
-
+# *****************************************************************************************
+# ** Load data stored in a csv file
+# *******  [INPUT] CSV file path
+# *******  [OUTPUT] Dataframe with the data
+# *****************************************************************************************
+def loadDataCSV(CSVList, debug=False):
+    csv = pd.read_csv(CSVList,sep=',')
+    if debug:
+        print("trajectory loaded")
+        csv
+    return csv
 
 #############################################################
 #                        MAIN                               #
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     # Read CSV
     instancesCSVFile = os.path.join(inputPath, instancesCSVFile)
     instancesCSV = loadDataCSV(instancesCSVFile)
-    # Separación del dataset en train y test, 80 y 20%
+    # Split the dataset into train-test
     if executeWIthPArtialFeatures:
         subfiles= os.path.join(outputPath,dividedThreadsDir)
         # for each file in subfiles directory

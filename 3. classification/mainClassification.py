@@ -60,8 +60,8 @@ resultsDir   = "Results"  # PATH to the sub-folder with pre-processed inputs
 #############################################################
 # *****************************************************************************************
 # ** Load data stored in a csv file
-# *******  INPUT: CSV file path
-# ******* OUTPUT: Dataframe with the data
+# *******  [INPUT] CSV file path
+# *******  [OUTPUT] Dataframe with the data
 # *****************************************************************************************
 def loadDataCSV(CSVList):
     csv = pd.read_csv(CSVList,sep=',')

@@ -18,10 +18,10 @@ import matplotlib as plt
 #############################################################
 # *****************************************************************************************
 # ** SQUISHE Algorithm
-# *******  INPUT: DATAFRAME with the track
-# *******  INPUT: compression rate: 1/10, 1/100... 
-# *******  INPUT: minimum number of points to include in the segmented track
-# ******* OUTPUT: LIST OF INDEXES OF THE TRACK SEGMENTS
+# *******  [INPUT] DATAFRAME with the track
+# *******  [INPUT] compression rate: 1/10, 1/100... 
+# *******  [INPUT] minimum number of points to include in the segmented track
+# *******  [OUTPUT] LIST OF INDEXES OF THE TRACK SEGMENTS
 # *****************************************************************************************
 def SQUISHE(track, compressionRate, minPoints,thread_id,debug=False):
     #list of indexes
@@ -78,8 +78,8 @@ def SQUISHE(track, compressionRate, minPoints,thread_id,debug=False):
 
 # *****************************************************************************************
 # ** paintSegment
-# *******  INPUT: 
-# ******* OUTPUT: 
+# *******  [INPUT] 
+# *******  [OUTPUT] 
 # *****************************************************************************************
 def paintSegment(indexList, track, toRemove, lastTrackPoint, paintFullTrack, clearPlot):
     if paintFullTrack:

@@ -31,19 +31,12 @@ from featuresExtraction import featuresExtraction
 
 import pandas as pd
 
-# *****************************************************************************************
-# ** Load data stored in a csv file
-# *******  INPUT: CSV file path
-# ******* OUTPUT: Dataframe with the data
-# *****************************************************************************************
-def loadDataCSV(CSVList, debug=False):
-    csv = pd.read_csv(CSVList,sep=',')
-    if debug:
-        print("trajectory loaded")
-        csv
-    return csv
 
 
+
+#############################################################
+#                        FLAGS                              #
+#############################################################
 #############################################################
 #                        PATHS                              #
 #############################################################
@@ -102,6 +95,18 @@ def createExperiment(featuresList, outputPath, featuresDir,seed, experiment,proc
         X_test.to_csv( join(DIR, "X_test.csv"),  index=False)
         y_train.to_csv(join(DIR, "y_train.csv"), index=False)
         y_test.to_csv( join(DIR, "y_test.csv"),  index=False)
+
+# *****************************************************************************************
+# ** Load data stored in a csv file
+# *******  [INPUT] CSV file path
+# *******  [OUTPUT] Dataframe with the data
+# *****************************************************************************************
+def loadDataCSV(CSVList, debug=False):
+    csv = pd.read_csv(CSVList,sep=',')
+    if debug:
+        print("trajectory loaded")
+        csv
+    return csv
 #############################################################
 #                     EXPERIMENTS                           #
 #############################################################
